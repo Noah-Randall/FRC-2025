@@ -48,7 +48,7 @@ public class SwerveTeleOpCommand extends Command {
 		// X FORWARD, Y SIDEAWAYS
 		double vxSpeed = -leftAxisX.get();
 		double vySpeed = -leftAxisY.get();
-		double rot = -rightAxisX.get();
+		double rot = rightAxisX.get();
 
 		// Deadband
 		vxSpeed = Math.abs(vxSpeed) > ControllerConstants.kDeadband ? vxSpeed : 0.0;
