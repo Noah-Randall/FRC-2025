@@ -83,13 +83,15 @@ public class SwerveSubsystem extends SubsystemBase {
 		SmartDashboard.putNumber("AngleDriveD", SwerveConstants.kDAngle);
 		SmartDashboard.putNumber("AngleDriveFF", SwerveConstants.kFFAngle);
 
+		SmartDashboard.putNumber("Gyro Adjustment", -90);
+
 		m_headingTargetAngle = getHeading();
 	}
 
 	private boolean isSlowModeEnabled = false;
 
 	public void zeroHeading() {
-		gyro.reset(); // sets yaw to 0
+		gyro.reset();
 	}
 
 	public double getHeading() {
@@ -208,6 +210,7 @@ public class SwerveSubsystem extends SubsystemBase {
 		SmartDashboard.putNumber("Robot Heading", getHeading());
 		SmartDashboard.putString("Robot Location", getPose().getTranslation().toString());
 		
+		gyro.setAngleAdjustment(SmartDashboard.getNumber("Gyro Adjustment", -90));
 		// setAnglePIDF(
 		// 	SmartDashboard.getNumber("AngleDriveP", SwerveConstants.kPAngle),
 		// 	SmartDashboard.getNumber("AngleDriveI", SwerveConstants.kIAngle),
