@@ -210,6 +210,7 @@ public class SwerveSubsystem extends SubsystemBase {
 		SmartDashboard.putNumber("Robot Heading", getHeading());
 		SmartDashboard.putString("Robot Location", getPose().getTranslation().toString());
 		
+		SmartDashboard.putBoolean("Slow Mode", isSlowModeEnabled);
 		gyro.setAngleAdjustment(SmartDashboard.getNumber("Gyro Adjustment", -90));
 		// setAnglePIDF(
 		// 	SmartDashboard.getNumber("AngleDriveP", SwerveConstants.kPAngle),
